@@ -19,15 +19,5 @@ int main(){
 
     printf("El consum per kilometre es: %.3f", consum);
 
-
-
-
-
-
-
-
-
-
-
-    return 0;
+return 0;
 }

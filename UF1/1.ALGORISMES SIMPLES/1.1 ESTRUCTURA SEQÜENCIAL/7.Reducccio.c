@@ -17,11 +17,6 @@ descompte = num * (1.00 - 0.15); //podem posar directament el 0.85
 
 printf("Descomptant el 15%% queda: %.2f", descompte);
 
-
-
-
-
-
-    return 0;
+return 0;
 
 }  

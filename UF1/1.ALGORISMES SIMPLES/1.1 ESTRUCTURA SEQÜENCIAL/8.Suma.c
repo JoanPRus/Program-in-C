@@ -13,8 +13,5 @@ printf("Introdueix dos nombres enters deixan un espai: ");
 scanf("%d %d", &num1, &num2);
 printf("%d + %d = %d", num1, num2, num1 + num2);
 
-
-
-
-    return 0;
+return 0;
 }

@@ -17,5 +17,5 @@ scanf("%f", &c);
 promig = (a + b + c) / 3.0;
 printf("El promig es: %.2f", promig);
 
-    return 0;
+return 0;
 }

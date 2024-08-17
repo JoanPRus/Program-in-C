@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <time.h> 
- //formas mas sencillas para este ejercicio: poner una constante del año o preguntar al usuario en que año esta. 
+ //formas mas sencillas para este ejercicio: preguntar al usuario en que año esta. 
 
  // Incluimos la biblioteca time.h para trabajar con funciones relacionadas con el tiempo
 

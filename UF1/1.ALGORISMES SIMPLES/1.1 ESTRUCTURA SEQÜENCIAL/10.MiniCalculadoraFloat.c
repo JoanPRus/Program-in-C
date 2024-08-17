@@ -19,10 +19,6 @@ printf("\n%.2f - %.2f = %.2f", num1, num2, num1 - num2);
 printf("\n%.2f * %.2f = %.2f", num1, num2, num1 * num2);
 printf("\n%.2f / %.2f = %.2f", num1, num2, num1 / num2);
 
-
-
-
-
 return 0; 
 
 }

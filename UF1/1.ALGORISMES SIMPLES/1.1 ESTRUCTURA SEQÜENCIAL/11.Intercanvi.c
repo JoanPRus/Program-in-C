@@ -16,6 +16,6 @@ int main(int argc, char const *argv[])
     printf("\n");
     printf(" A = %d", b);
     printf(" B = %d", a);
-    
+
     return 0;
 }

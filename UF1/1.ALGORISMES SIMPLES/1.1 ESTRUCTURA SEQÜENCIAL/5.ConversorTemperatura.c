@@ -17,6 +17,5 @@ formula = celsius * (temperatura - 32);
 printf("La temperatura en celsius es %.2f", formula);
 
 return 0; 
-
 }
 
