@@ -80,7 +80,7 @@ int main() {
             printf("El %s no es un día festivo.\n", dia);
         }
     }
-
+    getch();
     printf("Programa terminado.\n");
     return 0;
 }

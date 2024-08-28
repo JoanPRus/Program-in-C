@@ -17,5 +17,6 @@ int main(int argc, char const *argv[])
     printf(" A = %d", b);
     printf(" B = %d", a);
 
+    getch();
     return 0;
 }

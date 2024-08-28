@@ -1,8 +1,28 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
-            "type": "cppbuild",
+            "label": "Build C Program",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Compila el archivo C activo"
+        },
+        {
             "label": "C/C++: gcc.exe compilar archivo activo",
+            "type": "shell", // Cambié el tipo a "shell" porque "cppbuild" es redundante
             "command": "C:\\MinGW\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
@@ -23,6 +43,5 @@
             },
             "detail": "Tarea generada por el depurador."
         }
-    ],
-    "version": "2.0.0"
+    ]
 }

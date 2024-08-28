@@ -3,15 +3,16 @@
 
 int  main() {
 
-/* (Suma) Fer un programa que demani dos nombres enters a l’usuari i mostri
-per pantalla la seva suma.
-*/
+    /* (Suma) Fer un programa que demani dos nombres enters a l’usuari i mostri
+    per pantalla la seva suma.
+    */
 
-int num1, num2;
+    int num1, num2;
 
-printf("Introdueix dos nombres enters deixan un espai: ");
-scanf("%d %d", &num1, &num2);
-printf("%d + %d = %d", num1, num2, num1 + num2);
-
-return 0;
+    printf("Introdueix dos nombres enters deixan un espai: ");
+    scanf("%d %d", &num1, &num2);
+    printf("%d + %d = %d", num1, num2, num1 + num2);
+    
+    getch();
+    return 0;
 }

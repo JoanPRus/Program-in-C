@@ -20,5 +20,6 @@ printf("La seva area es: %.2f", amplada * llargaria);
 
 printf("\nEl seu perimetre es: %.2f", (amplada + llargaria) * 2 );
 
+getch();
 return 0; 
 }

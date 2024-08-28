@@ -1,8 +1,8 @@
 #include <stdio.h> 
 #include <string.h>
 
-int main()
-{
+int main(){
+
     /*Demanar a l'usuari un dia de la setmana i si està plovent.
     Indicar el lloc del entrenament fora o dins del pavelló, els dies de entrenament dl,dc,dv
     Informar del dels dies que no hi ha entrenament*/
@@ -23,7 +23,8 @@ int main()
         printf("hi ha entrenament\n");
     } else if (strcasecmp(dia, "dimarts") == 0 || strcasecmp(dia, "dijous") == 0 ||
               strcasecmp(dia, "dissabte") == 0 || strcasecmp(dia, "diumenge") == 0) {
-        printf("no hi ha entrenament\n"); 
+                printf("no hi ha entrenament\n"); 
+        getch();
         return 0;
     } else {
         printf("Resposta no valida\n");
@@ -37,6 +38,7 @@ int main()
         printf("Resposta no valida\n");
     }
 
+    getch();
     return 0;
 }
 

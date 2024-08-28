@@ -24,6 +24,7 @@ int main()
     } else if (strcasecmp(dia, "dimarts") == 0 || strcasecmp(dia, "dijous") == 0 ||
               strcasecmp(dia, "dissabte") == 0 || strcasecmp(dia, "diumenge") == 0) {
         printf("no hi ha entrenament\n"); 
+        getch();
         return 0;
     } else {
         printf("Resposta no valida\n");
@@ -36,7 +37,7 @@ int main()
     } else {
         printf("Resposta no valida\n");
     }
-
+    getch();
     return 0;
 }
 

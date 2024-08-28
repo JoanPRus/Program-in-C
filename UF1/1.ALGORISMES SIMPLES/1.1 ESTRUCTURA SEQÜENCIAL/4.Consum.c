@@ -18,6 +18,6 @@ int main(){
     consum = litres / kilometres;
 
     printf("El consum per kilometre es: %.3f", consum);
-
-return 0;
+    getch();
+    return 0;
 }

@@ -17,5 +17,6 @@ int num;
 
     printf("\nEl valor absolut es: %d", numabsolut);
 
+    getch();
     return 0;
 }

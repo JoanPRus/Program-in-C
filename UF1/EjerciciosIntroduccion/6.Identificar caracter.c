@@ -30,6 +30,6 @@ int main()
     }     
     
      else printf("Podem dir que (%c) no es una lletra ni un digit", c);
-
+     getch();
     return 0;
 }

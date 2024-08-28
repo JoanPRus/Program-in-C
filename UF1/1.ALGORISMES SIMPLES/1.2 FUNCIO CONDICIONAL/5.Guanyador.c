@@ -10,7 +10,7 @@ int main() {
 
 int gols,gols2;
 
-printf("Resultat del partit: ");
+printf("Resultat del partit (exemple: 5-9): ");
 scanf("%d-%d",  &gols, &gols2);
 printf("EquipA:%d EquipB:%d",gols,gols2);
 
@@ -24,7 +24,8 @@ if (gols<0 || gols2<0) {
     printf("\nA guanyat el equip B");
 } else if (gols == gols2) {
     printf("\nHi ha un empat");
-    
+
+    getch(); 
     return 0;
 }
 }

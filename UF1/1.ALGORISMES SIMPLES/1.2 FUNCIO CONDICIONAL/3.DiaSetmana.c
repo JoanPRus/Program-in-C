@@ -47,5 +47,6 @@ int main() {
         printf("Resultat: El dia %d no es valid", dia);
         break;
     }
+    getch();
     return 0;
 }

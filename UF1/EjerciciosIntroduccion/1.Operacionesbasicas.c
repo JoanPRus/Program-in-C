@@ -12,7 +12,7 @@ int main()
 
     printf("Ingresa un segundo numero entero: ");
     scanf("%d", &num2);
-    printf("Se ingreso un %d", num2);
+    printf("Se ingreso un %d\n", num2);
 
     
     printf("\n%d + %d = %d\n",num,num2,num+num2);
@@ -20,6 +20,6 @@ int main()
     printf("\n%d * %d = %d\n",num,num2,num*num2);
     printf("\n%d / %d = %d\n",num,num2,num/num2);
     
-
+    getch();
     return 0;
 }

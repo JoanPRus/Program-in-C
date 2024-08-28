@@ -37,6 +37,6 @@ int main() {
         printf("\nLa estacio correspont a tardor");
     }
 
-
+    getch();
     return 0;
 }

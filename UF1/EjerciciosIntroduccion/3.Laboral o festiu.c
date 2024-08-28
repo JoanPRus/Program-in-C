@@ -18,6 +18,7 @@ int main()
 
         if (num>=6 && num<=7) printf("es cap de setmana\n"); 
 
+     getch();
     return 0;
 }
 

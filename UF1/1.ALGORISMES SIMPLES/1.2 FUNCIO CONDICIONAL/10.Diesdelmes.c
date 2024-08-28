@@ -8,7 +8,7 @@ compte els anys de traspàs), 30 o 31 dies.*/
 int main() {
 
     int num;
-    printf("Introdueix un numero del 1-12 (representen els mesos del any: ");
+    printf("Introdueix un numero del 1-12 (representen els mesos del any): ");
     scanf("%d", &num);
 
     switch (num)
@@ -38,5 +38,6 @@ int main() {
         break;
     }
 
+    getch();
     return 0;
 }

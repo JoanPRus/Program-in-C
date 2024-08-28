@@ -37,6 +37,6 @@ int main () {
         edat = anyactual - any;  // Calculamos la edad restando el año de nacimiento del año actual
         printf("Actualment tens: %d anys\n", edat);  // Mostramos la edad calculada
     }
-
+    getch();
     return 0;  // Finalizamos el programa
 }

@@ -11,8 +11,8 @@ int main() {
 
 //Declarar variables 
 
-int hora;
-char dia[20];
+int hora = 0;
+char dia[20] = "";
 
 //Demanar hora y dia al usuari.
 
@@ -69,6 +69,6 @@ else if (strcasecmp (dia, "Dissabte") == 0 || strcasecmp (dia, "Diumenge") == 0)
 else {
         printf("Dades incorrectes: Dia no valid\n");
     }
-   
+    getch();
     return 0;
 }

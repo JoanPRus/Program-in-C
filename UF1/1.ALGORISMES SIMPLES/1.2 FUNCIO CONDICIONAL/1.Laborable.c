@@ -26,5 +26,6 @@ int main() {
         printf("Resultat: El dia %d es festiu", dia);
     }
 
+    getch();
     return 0;
 }

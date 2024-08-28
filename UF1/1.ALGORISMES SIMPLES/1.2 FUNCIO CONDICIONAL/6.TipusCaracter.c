@@ -26,5 +26,6 @@ int main() {
         printf("Resultat: El caràcter '%c' és diferent\n", car);
     }
 
+    getch();
     return 0;
 }

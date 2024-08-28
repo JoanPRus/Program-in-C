@@ -23,5 +23,6 @@ int main() {
 
     printf("\nEl valor maxim es %d", maxim);
 
+    getch();
     return 0;
 }

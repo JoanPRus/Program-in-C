@@ -29,6 +29,6 @@ int main()
     } else if (resultat1 < resultat2) { 
         printf("El guanyador es %s\n", equip2);
     } else printf("Hi ha un empat");
-
+    getch();
     return 0;
 }
