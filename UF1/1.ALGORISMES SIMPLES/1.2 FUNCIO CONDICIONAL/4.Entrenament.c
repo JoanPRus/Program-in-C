@@ -25,7 +25,7 @@ int main(){
               strcasecmp(dia, "dissabte") == 0 || strcasecmp(dia, "diumenge") == 0) {
                 printf("no hi ha entrenament\n"); 
         getch();
-        return 0;
+        return 0; //Paramos el  programa si no hay entrenamiento.
     } else {
         printf("Resposta no valida\n");
     }

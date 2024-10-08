@@ -22,7 +22,7 @@ int main() {
 
     if (dia>0 && dia<6) {    
         printf("Resultat: El dia %d es laboral", dia);
-    } else if (dia>0 && dia<8) {  
+    } else if (dia>5 && dia<8) {  
         printf("Resultat: El dia %d es festiu", dia);
     }
 

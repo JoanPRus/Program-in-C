@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 /*(Màxim) Fer un algoritme que calculi el màxim de dos números enters entrats
 per l’usuari. En cas que siguin el mateix nombre, mostrarà qualsevol dels dos 
@@ -19,7 +20,7 @@ int main() {
     Si "enter" es mayor que "enter2" "maxim" tomara el valor de "enter"
     Si "enter" es menor que "enter2" "maxim" tomara el valor de "enter2"*/
 
-    maxim = (enter > enter2) ? enter : enter2; 
+    maxim = (enter > enter2) ? enter : enter2; //operador  tenario
 
     printf("\nEl valor maxim es %d", maxim);
 
