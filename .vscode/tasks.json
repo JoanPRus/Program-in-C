@@ -7,9 +7,10 @@
             "command": "gcc",
             "args": [
                 "-g",
+                "-I", "C:\\Users\\Usuario\\Documents\\GitHub\\Program-in-C\\UF1\\include",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "group": {
                 "kind": "build",
@@ -22,11 +23,12 @@
         },
         {
             "label": "C/C++: gcc.exe compilar archivo activo",
-            "type": "shell", // Cambié el tipo a "shell" porque "cppbuild" es redundante
+            "type": "shell",
             "command": "C:\\MinGW\\bin\\gcc.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                "-I", "C:\\Users\\Usuario\\Documents\\GitHub\\Program-in-C\\UF1\\include",
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
