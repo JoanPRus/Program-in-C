@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "stdio.h": "c",
-        "RESUMEN.C": "cpp"
+        "RESUMEN.C": "cpp",
+        "PRUEBA.C": "cpp",
+        "pruebaa.C": "cpp",
+        "1.pruebaa.C": "cpp"
     }
 }
