@@ -38,7 +38,7 @@ int main(){
 
     contador++; // aumenta el contador
 
-    if (car == 65 || car == 69 || car == 73 || car == 79 || car == 85){
+    if (car == 'A' || car == 'E' || car == 'I' || car == 'O' || car == 'U'){
 
         contador = 0; // el contador toma el valor  de 0  = porque aparece  una  vocal
     }

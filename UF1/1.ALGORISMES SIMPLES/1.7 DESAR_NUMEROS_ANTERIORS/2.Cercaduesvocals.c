@@ -40,8 +40,8 @@ int main(){
 
 
 
-       if ((car == 65 || car == 69 || car == 73 || car == 79 || car == 85) && (car_memoria == 65 || car_memoria == 69 
-       || car_memoria == 73 || car_memoria == 79 || car_memoria == 85)){
+       if ((car == 'A' || car == 'E' || car == 'I' || car == 'O' || car == 'U') && (car_memoria == 'A' || car_memoria == 'E' 
+       || car_memoria == 'I' || car_memoria == 'O' || car_memoria == 'U')){
 
             break; //si las  dos ultimas son vocales se termina porque  se cumple el if
         }
