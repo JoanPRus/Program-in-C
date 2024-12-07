@@ -27,7 +27,7 @@ int main(){
 
   //tengo que hacer un bucle para recorrer cada dia y sumar su precio. 
 
-  for (int i = 0; i <= dies_estada; i++){ // hacemos un bucle para que se repita por  cada  dia
+  for (int i = 1; i <= dies_estada; i++){ // hacemos un bucle para que se repita por  cada  dia
 
     if (contador == 6 || contador == 7){ //condicion  para el  festivo
       resultat += festivo; 
