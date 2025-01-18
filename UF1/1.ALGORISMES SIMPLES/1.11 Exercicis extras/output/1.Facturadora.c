@@ -47,13 +47,7 @@ int main(){
         printf("\nDescompte %.2f",  descompte);
         printf("\nImport a pagar %.2f", import_a_pagar);
     }
-
-    
-
-   
-    
-   
-    
+  
     getch();
     return 0;
 }

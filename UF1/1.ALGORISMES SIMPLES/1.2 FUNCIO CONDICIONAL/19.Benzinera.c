@@ -13,7 +13,7 @@ int main(){
     4. Si el client te la targeta client, tindra? un descompte del 10% sobre el
     preu per litre.
     El programa haur? de demanar tipus de combustible; quantitat de litres i si el
-    client disposa de la targeta client
+    client disposa de la targeta client.
     */
     // Declarar variables i constants 
     

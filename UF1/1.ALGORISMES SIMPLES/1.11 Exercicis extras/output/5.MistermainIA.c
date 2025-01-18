@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <rlutil.h>
 #include <time.h>
+#include <stdbool.h> 
+void prinTitol2();
 
 
 /*(MasterMindAI): Inverteix el programa del MasterMind per tal de fer que ara
@@ -12,18 +14,22 @@ Al finalizar cal indicar amb quants intents ha esbrinat l’ordinar el número d
 l’usuari.
 */
 
-int main(){
+
+
+void MistermainIA(){
 
     /*Introducir un numero de 4  digitos,  y  que la maquina lo adivine,  indicar si es mas grande + o mas  pequeño -*/
 
     int numero = 0, numIA = 0, vueltas  = 1, num_menos = 9999,  num_mas = 1000;
-    char c; 
-
-     
+    char c, cG; 
+    bool volta = false;
+    int num_masG = 0, num_menosG = 0, numIAG = 0;
     
+    prinTitol2();
+
     //pedimos  el  numero  y  controlamos que tenga  4 digitos.  
     do {
-    printf("introdueix  un  numero de 4  digits: ");
+    printf("\n\nintrodueix  un  numero de 4  digits: ");
     scanf("%d", &numero);
     }while(numero < 1000 || numero > 9999);
 
@@ -32,13 +38,27 @@ int main(){
     srand(time(NULL)); 
 
     while(numero != numIA){
-          
+
         c = ' ';//elimina el caracter anterior
         numIA = rand() % (num_menos - num_mas + 1) + num_mas; //genera  el numero  teniendo en cuenta los limites  y luego  se suma num_mas 
+        if (volta){
+            cls();
+            prinTitol2();
+            printf("El numero ha adivinar es el: %d",  numero);
+            printf("\n[%d-%d]---> numero generat en el intent [%.2d] = %d %c", num_masG, num_menosG, vueltas - 1, numIAG, cG);
 
-        printf("\n[%d-%d]---> numero generat en el intent [%d] = %d %c", num_mas, num_menos, vueltas, numIA, c);
+
+        }
+        printf("\n[%d-%d]---> numero generat en el intent [%.2d] = %d %c", num_mas, num_menos, vueltas, numIA, c);
         scanf(" %c", &c);
         vueltas++;
+
+        num_masG = num_mas;
+        num_menosG = num_menos;
+        numIAG = numIA;
+        cG = c;
+
+
 
         if(c == '+'){
 
@@ -52,11 +72,18 @@ int main(){
         }else if(c == '='){
             break;
         }
-
+        volta = true; 
     }
 
     printf("Numero trobat  amb %d intents!!!", vueltas - 1);
 
     getch();
-    return 0;
+    
+}
+
+void prinTitol2()//funcion  
+{
+    setColor(BLUE);
+    printf("\t  Bienvenido a  MasterMindAI\n");
+    setColor(WHITE);
 }
