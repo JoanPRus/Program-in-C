@@ -1,14 +1,9 @@
-
-
-/*(MostraDigits) Fer un programa que demani un nombre i mostri per pantalla
-els dígits des de davant cap endarrera.*/
 #include <stdio.h>
 void demanarNumero(char numero[50]);
 void numerocapadelant(char numero[50]);
 
-/*(MostraDigitsDesDeDarrera) Fer un programa que demani un nombre i
-mostri per pantalla els seus dígits des de darrera cap endavant
-*/
+/*(MostraDigits) Fer un programa que demani un nombre i mostri per pantalla
+els dígits des de davant cap endarrera.*/
 
 int main(){
     char numero[50];
@@ -20,7 +15,6 @@ int main(){
     return 0;
 }
 
-
 //reutilizamos funciones
 void demanarNumero(char numero[50]) //el numero es una cadena de  caracteres
 {
@@ -30,7 +24,9 @@ void demanarNumero(char numero[50]) //el numero es una cadena de  caracteres
 
 void numerocapadelant(char numero[50])
 {   
-    for(int i = 0; i < numero[i]; i++){  
-       printf("%c-",  numero[i]);
+    for(int i = 0; numero[i] != '\0'; i++){  
+       if(numero[i + 1] == '\0'){
+       printf("%c", numero[i]); 
+       }else printf("%c-", numero[i]);
     } 
 }

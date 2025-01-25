@@ -1,7 +1,7 @@
 #include <stdio.h>
 int demanarNumero();
 void pinta(int numero, int contador);
-int calculaQuantitatDigits(int numero, int contador);
+int calculaQuantitatDigits(int numero);
 /*(QuantitatDigits) Fer un programa que demani un nombre positiu i ens
 mostri quants dígits té.
 int demanarNumero(void);
@@ -15,10 +15,10 @@ void pinta(int,int);
 
 //damos valor a las variables del  main.
 int main(){
-    int numero = 1, contador = 2;
+    int numero, contador;
 
     numero = demanarNumero();
-    contador = calculaQuantitatDigits(numero, contador);
+    contador = calculaQuantitatDigits(numero);
     pinta(numero, contador);
     
     getch();
@@ -26,9 +26,10 @@ int main(){
 }
 
 //calculamos el numero de digitos
-int calculaQuantitatDigits(int numero, int contador)
+int calculaQuantitatDigits(int numero)
 {
-    contador = 0;
+    int contador = 0;
+    
     while(numero > 0){
         numero /= 10;
         contador++;

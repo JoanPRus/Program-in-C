@@ -1,5 +1,5 @@
 #include<stdio.h>
-int demanarNumero(int numero);
+int demanarNumero();
 void pintaTaula(int numero);
 
 /*(TaulaMultiplicar) Fer un programa que
@@ -13,15 +13,16 @@ void pintaTaula(int);*/
 
 int main(){
     int numero;
-    numero = demanarNumero(numero);// la  variable numero es igual a la funcion, luego guardamos el numero en  el scanf y ya trabaja con el dato. 
+    numero = demanarNumero();// la  variable numero es igual a la funcion, luego guardamos el numero en  el scanf y ya trabaja con el dato. 
     pintaTaula(numero);
 
     getch();
     return 0;
 }
 
-int demanarNumero(int numero)
+int demanarNumero()
 {   
+    int numero;
     do{
         printf("Introdueix la taula que vols veure (1-10): ");
         scanf("%d", &numero);
