@@ -57,8 +57,6 @@ int main(){
     return 0;
 }
 
-
-
 int demanarany(){ 
     //declaramos variables 
     int any, anyoriginal;
