@@ -5,6 +5,7 @@
         "PRUEBA.C": "cpp",
         "pruebaa.C": "cpp",
         "1.pruebaa.C": "cpp",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "1.IntercanviVariables.C": "cpp"
     }
 }
