@@ -6,6 +6,7 @@
         "pruebaa.C": "cpp",
         "1.pruebaa.C": "cpp",
         "stdbool.h": "c",
-        "1.IntercanviVariables.C": "cpp"
+        "1.IntercanviVariables.C": "cpp",
+        "7.GPS.C": "cpp"
     }
 }

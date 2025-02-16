@@ -30,7 +30,7 @@ int main(){
     int x = 40, y = 10;
     int FilaSuperior = 5, FilaInferior = 25;
     int ColumnaIzquierda = 20, ColumnaDerecha = 100;
-    int tecla;
+    int tecla = KEY_RIGHT;
     int posicionesX[500];
     int contadorX = 0;
     int posicionesY[500];
@@ -38,13 +38,12 @@ int main(){
     int contadormanzanas = 0;
     int x_manzana = 60, y_manzana = 14; 
     int  longitud = 1;
-    int colisionX, colisionY;
     bool colision = false;
+    srand(time(NULL));
     mensajedeincio();
     marco();
     serpientemovimiento(&x, &y, ColumnaIzquierda, ColumnaDerecha, FilaInferior, FilaSuperior, &tecla, posicionesY, &contadorY, posicionesX, &contadorX, &contadormanzanas, &x_manzana, &y_manzana, &longitud, &colision);
     gameOver();
-    Sleep(5000);
     return 0;
 
 }
@@ -62,7 +61,7 @@ void mensajedeincio(){
     printf("                  __/ |                                                \n");
     printf("                 |___/                                                 \n");
     printf("\n");
-    Sleep(5000);
+    Sleep(1500);
     cls();
 }
 
@@ -80,9 +79,8 @@ void gameOver() {
     printf("$$ |  $$ |$$ |  $$ |$$ |\\$  /$$ |$$ |            $$ |  $$ |  \\$$$  /  $$ |      $$ |  $$ | \n");
     printf("\\$$$$$$  |$$ |  $$ |$$ | \\_/ $$ |$$$$$$$$\\        $$$$$$  |   \\$  /   $$$$$$$$\\ $$ |  $$ | \n");
     printf(" \\______/ \\__|  \\__|\\__|     \\__|\\________|       \\______/     \\_/    \\________|\\__|  \\__| \n");
-    printf("\n");                                                                                    
-                                                                                                    
-    
+    printf("\n");                                                                                                                                                                        
+    Sleep(2000);
 }
 
 
@@ -108,11 +106,9 @@ void marco()
 }
 
 //Crear manzana
-/*Criterios: No puede generarse fuera del recuadro, no  puede generarse en una  posicion que este la serpiente y tiene que generar 
-otra manzana unicamente cuando la  serpiente haya pasado  por  su posicion*/
-void  manzana(int *x, int *y, int *contadormanzanas, int *x_manzana, int *y_manzana,  int *longitud){
+/*La manzana se genera una primera vez en  unas cordenadas y las siguientes se generan cumpliendo el if*/
+void manzana(int *x, int *y, int *contadormanzanas, int *x_manzana, int *y_manzana,  int *longitud){
 
-    srand(time(NULL));
     //tengo que generar dos  numeros, el de la x y el de la y. tienen  que estar dentro del recuadro. 
     int min_x_manzana = 21;
     int max_x_manzana = 99; 
@@ -134,12 +130,11 @@ void  manzana(int *x, int *y, int *contadormanzanas, int *x_manzana, int *y_manz
     printf("O");
 
 }
-/*borrar posicones por  donde  ha pasado la serpiente, dejamos las 3 ultimas posicones sin  borrar, que despues cuando 
-se coma la manzana ya no se dejaran los 3 ultimos si no los  4  ultimos y asi. 
-1.Acceder a las posiciones, imprimir espacio, controlar que deje sin borrar dependiendo  las manzanas comidas.*/
 
-/*Quiero acceder a la  primera posicio de X Y y imprimir espacio*/
-void borrarrastro(int *posicionesX, int *posicionesY, int *contadorX, int *contadorY, int *longitud)//aqui  me  quede
+/*borramos  el  rastro accediendo al array de las  posiciones restando la  longitud  y imprimiendo espacio. Indice_borrar nos da la poscion 
+que no pertenece a la serpiente pero  si  por donde  a pasado. El contadorX tiene todas las  posiciones del indice posicionesX restando la longitud 
+se situa en la poscion  que hay que  borrar*/
+void borrarrastro(int *posicionesX, int *posicionesY, int *contadorX, int *contadorY, int *longitud)
 {   
     if (*longitud > 0) {
         int indice_borrar = (*contadorX - *longitud + 500) % 500; // si contador -  longitud es negativo se  le suman 500, si se va  a salir del array % 500 para que empiece de nuevo
@@ -148,7 +143,10 @@ void borrarrastro(int *posicionesX, int *posicionesY, int *contadorX, int *conta
     }
 }
 
-/*Colision de la serpiente, para que termine el juego. Si la ultima  posicion de x y es igual alguna anterior hay colision */
+/*Colision de la serpiente, para que termine el juego. Si la ultima  posicion de x y es igual alguna anterior hay colision.
+Guardamos las  posiciones de  la cabeza.  El for recorre las  posicones restando - 1 para la cabeza y -i  aumentando
+i hasta el numero de  longitud de  la serpiente,
+El if usa posicionesX y el indice cuerpo_serpiente  que son las  posiciones anteriores de la serpiente y compara  con la cabezaX. */
 void colisionserpiente(int *contadorX, int *contadorY, int *longitud, int *posicionesX, int *posicionesY, bool *colision)
 {
     //posicion donde esta  la cabeza de la serpiente
@@ -171,19 +169,17 @@ void colisionserpiente(int *contadorX, int *contadorY, int *longitud, int *posic
 //Posiones  por  donde  pasa la serpiente guardadas en arrays
 void guardarposicion(int *x, int *posicionesX, int *contadorX, int  *contadorY, int *y, int *posicionesY, int *longitud)
 {
-    posicionesX[*contadorX] = *x;//se asiga el valor en la  posicon del contador y luego se aumenta. 
+    //Array con  puntero contador,  que aumentara los indices, para  almacenar  nuevas X
+    posicionesX[*contadorX] = *x;
     posicionesY[*contadorY] = *y;
    
 
-    // Evitar el desbordamiento usando módulo
+    // Evitar el desbordamiento usando módulo y aumenta  el  contador para nuevos indices
     *contadorX = (*contadorX + 1) % 500;
     *contadorY = (*contadorY + 1) % 500;
 }
 
-/*Puedo enfocar esto de dos formas, la mas sencilla creo que es imprimir  un  unico caracter, porque si no cuando cambia de direccion
-la impresion se hace en horizontal y los cambios para  solucionar eso es mas dificil que hacer lo siguiente.
-La serpiente, solo va ha imprimir un unico caracter. La serpiente pasa por diferentes posicones y imagina que  tiene en un contador
-5 manzanas comidas,  entonces yo voy a borrar todas las posicones por donde  ha pasado menos  esas ultimas 5 + la  primera 6.  */
+//Imprime S
 void PrintSerpiente(){
     setColor(BLUE);
     printf("S");
@@ -198,17 +194,18 @@ void mensajecontador(int *contadormanzanas){
 }
 
 
-
 //Movimiento de la  serpiente
 void serpientemovimiento(int *x,  int *y, int ColumnaIzquierda, int ColumnaDerecha, int FilaInferior, int FilaSuperior, int  *tecla, int *posicionesY, int *contadorY, int *posicionesX, int *contadorX, int *contadormanzanas, int *x_manzana, int *y_manzana, int *longitud, bool *colision)
 {   
+    //Control de las  teclas para tener un buen movimiento
     int nuevaTecla, teclaAnterior;
+    //Borramos el primer rastro y guardamos las  posicion 
     borrarrastro(posicionesX, posicionesY, contadorX, contadorY, longitud);
     guardarposicion(x, posicionesX, contadorX, contadorY, y, posicionesY, longitud);
 
-    while((*x > ColumnaIzquierda && *x < ColumnaDerecha) && (*y > FilaSuperior &&  *y < FilaInferior  &&  *colision == false)) {  //controla las paredes  
-        
-        if (kbhit()) {
+    //controla  los limites y si hay colision
+    while((*x > ColumnaIzquierda && *x < ColumnaDerecha) && (*y > FilaSuperior &&  *y < FilaInferior  &&  *colision == false)) {  
+        if (kbhit()) {//si se presiona  una tecla nueva la registra, mira  si cumple el if
             nuevaTecla = getkey();
 
             if ((nuevaTecla == KEY_UP && teclaAnterior != KEY_DOWN) ||
@@ -219,7 +216,7 @@ void serpientemovimiento(int *x,  int *y, int ColumnaIzquierda, int ColumnaDerec
                 teclaAnterior = nuevaTecla;
             }
         }
-
+        //Controla  tecla  y se repite continuamente por  el while
         switch (*tecla) {
             case KEY_UP:
                 *y -= 1;
@@ -235,13 +232,14 @@ void serpientemovimiento(int *x,  int *y, int ColumnaIzquierda, int ColumnaDerec
                 break;
         }
 
-        gotoxy(*x, *y);
-        PrintSerpiente();
-        Sleep(150); 
-        borrarrastro(posicionesX, posicionesY, contadorX, contadorY, longitud);
-        guardarposicion(x, posicionesX, contadorX, contadorY, y, posicionesY, longitud);
-        manzana(x, y, contadormanzanas, x_manzana, y_manzana, longitud);
-        mensajecontador(contadormanzanas);
-        colisionserpiente(contadorX, contadorY, longitud, posicionesX, posicionesY, colision);
+        //ejecuta todas las funciones todo el  rato
+        gotoxy(*x, *y);//posicion de la serpiente actualizado
+        PrintSerpiente();//pinta la serpiente
+        Sleep(150); //da un tiempo  para el movimiento
+        borrarrastro(posicionesX, posicionesY, contadorX, contadorY, longitud);//borra por donde ha pasado
+        guardarposicion(x, posicionesX, contadorX, contadorY, y, posicionesY, longitud);//registra las nuevas posiciones
+        manzana(x, y, contadormanzanas, x_manzana, y_manzana, longitud);//genera la manzana, aumenta el contador y la  longitud
+        mensajecontador(contadormanzanas); //imprime el numero de manzanas comidas
+        colisionserpiente(contadorX, contadorY, longitud, posicionesX, posicionesY, colision);//colision de la serpiente
     }
 }
