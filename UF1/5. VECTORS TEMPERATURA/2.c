@@ -173,7 +173,6 @@ void promediotemperatura(int v[], float *promedio)
     resultado = suma / 24;
     printf("\nEl promedio es %f", resultado);
     *promedio = resultado;  
-
 }
 
 /*4. Demana una temperatura a l’usuari i indica en quina hora s’ha produït. Només
@@ -203,7 +202,6 @@ void pedirtemperatura(int v[])
     if(temperaturaexistente == false){
         printf("La temperatura %d no ha aparecido en ninguna hora", temperatura);
     }
-
 }
 
 /*5. Fes una nova funció que calculi el promig de les temperatures enregistrades
@@ -232,7 +230,6 @@ void promedioentrehoras(int v[])
     }while(horafinal < horainicial || horafinal > 23);
     
     calcularpromedioentrehoras(v, horainicial, horafinal);
-
 }
 
 void calcularpromedioentrehoras(int v[], int horainicial, int horafinal)
@@ -245,7 +242,6 @@ void calcularpromedioentrehoras(int v[], int horainicial, int horafinal)
 
     resultado = suma / (horafinal - horainicial + 1);
     printf("\n\nEl promedio de las temperaturas entre las  %d y las %d es: %f", horainicial, horafinal, resultado);
-
 }
 
 /*6. Quina és la temperatura mitja per a cadascuna dels rang (0-10, 11-18 i 19-
@@ -261,7 +257,6 @@ void temperaturamediaporrangos(int v[])
     calcularpromedioentrehoras(v, HORAMINRANG1, HORAMAXRANG1);
     calcularpromedioentrehoras(v, HORAMINRANG2, HORAMAXRANG2);
     calcularpromedioentrehoras(v, HORAMINRANG3, HORAMAXRANG3);
-
 }
 
 /*7. Indica quines són les hores en què temperatura ha estat per sobre de la mitja.
@@ -282,8 +277,6 @@ void temperaturasPorEncimaDeLaMedia(int v[], float  *promedio){
 
     printf("\n\nVector  con temperaturas por encima de la  media %f\n", *promedio);
     imprimirresultados(vm, j);
-
-
 }
 
 /*8. Demana a l’usuari quina temperatura vol eliminar i elimina tots els cops on
@@ -305,15 +298,7 @@ void eliminartemperatura(int v[]){
         }
     }
 
-    /*for(int k = 0; k < j; k++){
-
-        printf("\n[%d]: %d", k, vnuevo[k]);
-    }*/
-
     imprimirresultados(vnuevo, j);
-
-
-
 }
 
 /*9. Indica les tres temperatures mínimes, sense utilitzar mètodes d’ordenació.
@@ -330,7 +315,6 @@ En la segona crida a la funció se li passarà un -1 i retornarà
 el 0.*/
 
 void trestemperaturasminimas(int v[]){
-
     int vmin[numeroelementosdetemperaturaminima] = {-4}; //paso  A y  B
 
     vmin[1] = funciontempminima(v, MAXVECTOR, -3); 
@@ -338,7 +322,6 @@ void trestemperaturasminimas(int v[]){
     //printf("\n\nLas 3 temperaturas mas bajas son: %d %d %d", vmin[0], vmin[1], vmin[2]);
     printf("\n\nLas tres temperaturas mas bajas\n");
     imprimirresultados(vmin, 3);
-
 }
 
 //A la funcion hay  que pasarle el vector, cantidad de elementos  y temperatura minima
@@ -354,6 +337,6 @@ int funciontempminima(int v[], int numeroelementos, int tempminima){
             numero = v[i]; 
         }
     }
-
+    
    return numero;
 }
