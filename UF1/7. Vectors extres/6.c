@@ -27,7 +27,7 @@ void tirardado(int v[]){
     int contador = 0;
     while(contador < MAX){
 
-        int num_dado = rand() % 7;
+        int num_dado = rand() % 6 + 1;
 
         printf("\nEl numero que ha salido es: %d\n", num_dado);
         
