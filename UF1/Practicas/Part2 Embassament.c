@@ -24,7 +24,8 @@ a 30 m3
 Nota:
 − per fixar l’amplada de la pantalla a un ample fixa de columnes, utilitza la
 instrucció:
-system("mode con cols=168");*/
+system("mode con cols=168");
+formula: Cabalhora=cabalhora anterior+/-rand()%11* cabalhora anterior/100*/
 
 int main(){
     int cabal;
@@ -63,14 +64,17 @@ void imprimir_cabal(int *cabal, int *cabal_aleatori){
     }
 }
 
-void generar_numeros(int *cabal, int *cabal_aleatori){
-  
+void generar_numeros(int *cabal, int *cabal_aleatori){  
+    //usar esta formula: Cabalhora=cabalhora anterior+/-rand()%11* cabalhora anterior/100
+    if(*cabal < 1){
+        *cabal = 1;
+    }
     int positiu = rand()  % 2;
 
     if(positiu == 1){
-        *cabal_aleatori  = *cabal + rand() % 11;  
+        *cabal_aleatori  = *cabal + rand() % 11 * ((float)*cabal/100);  
     }else{
-        *cabal_aleatori  = *cabal - rand() % 11;
+        *cabal_aleatori  = *cabal - rand() % 11 * ((float)*cabal/100);
     }
 }
 
