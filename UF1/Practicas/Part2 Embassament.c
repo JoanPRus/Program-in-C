@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <time.h>
 void presentacio();
-void demanar_cabal_inicial(int *cabal_inicial);
+void demanar_cabal(int *cabal);
 void pintar_grafic();
-void imprimir_cabal(int *cabal_inicial, int *cabal_aleatori);
-void generar_numeros(int cabal_anterior, int *cabal_aleatori);
+void imprimir_cabal(int *cabal, int *cabal_aleatori);
+void generar_numeros(int *cabal, int *cabal_aleatori);
 /*DIBUIX (part2)
 Estem pensant en oferir al client la possibilitat de visualitzar la informació en un
 gràfic. Per això, s’ha decidit, representar el gràfic del cabal del riu 1. Com encara
@@ -27,52 +27,50 @@ instrucció:
 system("mode con cols=168");*/
 
 int main(){
-    int cabal_inicial;
+    int cabal;
     int cabal_aleatori;
     system("mode con cols=168");
     presentacio();
-    demanar_cabal_inicial(&cabal_inicial);
+    demanar_cabal(&cabal);
     pintar_grafic();
     srand(time(NULL));
-    imprimir_cabal(&cabal_inicial, &cabal_aleatori);
+    imprimir_cabal(&cabal, &cabal_aleatori);
     getch();
     return 0;
 }
 
-void imprimir_cabal(int *cabal_inicial, int *cabal_aleatori){
+void imprimir_cabal(int *cabal, int *cabal_aleatori){
   
-    int cabal_anterior =  *cabal_inicial;
     int x= 3, y_inicial = 5;
-    y_inicial += 30 - *cabal_inicial;
+    y_inicial += 30 - *cabal;
     gotoxy(x, y_inicial);
-    printf("%d", *cabal_inicial);
+    printf("%d", *cabal);
     y_inicial = 5;
     x += 3;
     
     for(int i = 0; i < 23; i++){
 
         do{
-            generar_numeros(cabal_anterior, cabal_aleatori);
+            generar_numeros(cabal, cabal_aleatori);
         }while(*cabal_aleatori > 30 || *cabal_aleatori < 0);
 
         y_inicial += 30 - *cabal_aleatori;
         gotoxy(x, y_inicial);
         printf("%d", *cabal_aleatori);
-        cabal_anterior = *cabal_aleatori;
+        *cabal = *cabal_aleatori;
         x += 3;
         y_inicial = 5;
     }
-
 }
 
-void generar_numeros(int cabal_anterior, int *cabal_aleatori){
+void generar_numeros(int *cabal, int *cabal_aleatori){
   
     int positiu = rand()  % 2;
 
     if(positiu == 1){
-        *cabal_aleatori  = cabal_anterior + rand() % 7;  // 7 para que el dibujo tenga algo mas de forma
+        *cabal_aleatori  = *cabal + rand() % 11;  
     }else{
-        *cabal_aleatori  = cabal_anterior - rand() % 7;
+        *cabal_aleatori  = *cabal - rand() % 11;
     }
 }
 
@@ -105,13 +103,13 @@ void pintar_grafic(){
 }
 
 
-void demanar_cabal_inicial(int *cabal_inicial){
+void demanar_cabal(int *cabal){
     
 
     do{
         printf("\nIntrodueix el cabal inicial (0-30): ");
-        scanf("%d", cabal_inicial);
-    }while(*cabal_inicial > 30 || *cabal_inicial < 0);
+        scanf("%d", cabal);
+    }while(*cabal > 30 || *cabal < 0);
 
 }
 
