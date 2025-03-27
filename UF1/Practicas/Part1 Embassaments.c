@@ -52,7 +52,7 @@ int main(){
     float valors_embassament[MAX_hores] = {};
     float percentatge[MAX_hores] = {};
     
-
+    srand(time(NULL));
     presentacio();
     cabal_inicial_embassament = demanar_cabal_embassament();
     cabal_inicial_riu1 = demanar_cabal_riu(1);
