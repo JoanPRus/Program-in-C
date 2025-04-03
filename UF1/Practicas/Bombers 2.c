@@ -16,7 +16,10 @@ int demanar_casella_escales(const char *mensaje, int min,  int casella);
 void demanar_numero_extintors(int *numero_extintors);
 void demanar_posicions_extintors(int posicions_escales_inici[], int posicions_escales_final[], int *numero_extintors, int posicions_extintors[]);
 void recorregut_bombers(int posicions_escales_inici[], int posicions_escales_final[], int posicions_extintors[]);
+<<<<<<< HEAD
 void mensaje_inicio();
+=======
+>>>>>>> d31ba8efbb6c7a5063580511155601d9d70b57b6
 /*Bombers casella 0, casa  amb foc casella 100. Saltem les caselles amb un dau 1-6.
  Arribem quan  la casella del bombers sigui igual  o major a 100.
 1.Tenim  escales durant el  recorregut,  fan  que recullin n  posicions. 
@@ -39,7 +42,11 @@ int main(){
     int posicions_escales_inici[max_escales] = {};
     int posicions_escales_final[max_escales] = {};
     int posicions_extintors[max_extintors] = {};
+<<<<<<< HEAD
     mensaje_inicio();
+=======
+
+>>>>>>> d31ba8efbb6c7a5063580511155601d9d70b57b6
     demanar_numero_escales(&numero_de_escales);
     posicions_de_cada_escala(&numero_de_escales, posicions_escales_inici, posicions_escales_final);
     demanar_numero_extintors(&numero_extintors);
@@ -54,11 +61,14 @@ int main(){
 2.Demanar punt inicial i final, amb  condicions.
 3.Demanar numeros  de extintors,  amb condicions
 4. Moviment dels bombers */
+<<<<<<< HEAD
 void mensaje_inicio(){
 
     printf("Benvingut al servei de bombers");
     printf("\nProces de configuracio  del sistema");
 }
+=======
+>>>>>>> d31ba8efbb6c7a5063580511155601d9d70b57b6
 
 void recorregut_bombers(int posicions_escales_inici[], int posicions_escales_final[], int posicions_extintors[]){
 
